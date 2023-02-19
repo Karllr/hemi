@@ -49,8 +49,10 @@ function Player(x,y){
         this.hitPortal=false;
         this.superJump=false;
         this.collideWith(0,this.yvel,blocks);
-        if(this.y>height){
-          this.y=0+cam.y;
+        if(this.y>height+levelHeight){
+            this.yvel=0;
+            this.x=this.respawn.x;
+            this.y=this.respawn.y;
         }
     };
     this.collideWith=function(xv,yv,blocks){
